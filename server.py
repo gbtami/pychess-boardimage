@@ -38,7 +38,7 @@ THEMES = {name: load_theme(name) for name in ["wikipedia", "lichess-blue", "lich
 
 class Service:
     def make_svg(self, request):
-        css = request.query.get("css", "standard_standard").replace("_", "/")
+        css = request.query.get("css", "standard_standard").replace("_", "/", 1)
         fen = request.query["fen"].replace(".", "+")
         print(css, fen)
         try:
