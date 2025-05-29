@@ -40,7 +40,8 @@ class Service:
     def make_svg(self, request):
         css = request.query.get("css", "standard_standard").replace("_", "/", 1)
         fen = request.query["fen"].replace(".", "+")
-        print(css, fen)
+        background_image = request.query.get("background_image")
+        print(css, fen, background_image)
         try:
             board = pychess.Board(fen, css)
         except KeyError:
@@ -104,6 +105,7 @@ class Service:
             width=width,
             height=height,
             colors=colors,
+            background_image=background_image,
         )
 
     async def render_svg(self, request):
