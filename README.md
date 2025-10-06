@@ -10,7 +10,6 @@ Requires Python 3.7+.
 
 ```
 sudo apt-get install python3-dev libffi-dev libxml2-dev libxslt1-dev libcairo2
-git submodule update --init --recursive
 pip install -r requirements.txt
 ```
 
